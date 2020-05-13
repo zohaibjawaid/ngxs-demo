@@ -1,0 +1,7 @@
+<h4>List of Customers</h4>
+<ul class="customers">
+  <li *ngFor="let customer of customers$ | async">
+     {{customer.name}}
+    <button style="float: right" (click)="removeCustomer(customer.name)">Remove</button>
+  </li>
+</ul>
