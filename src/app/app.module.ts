@@ -8,6 +8,8 @@ import {NgxsModule} from '@ngxs/store';
 import {CustomerState} from './state/customer.state.';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
+import {fakeBackendProvider} from './fake-backend';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import {NgxsLoggerPluginModule} from '@ngxs/logger-plugin';
       CustomerState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot()
+    NgxsLoggerPluginModule.forRoot(),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [fakeBackendProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

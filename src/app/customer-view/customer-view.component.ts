@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RemoveCustomer} from '../actions/customer.actions';
+import {GetCustomer, RemoveCustomer} from '../actions/customer.actions';
 import {Observable} from 'rxjs';
 import {Select, Store} from '@ngxs/store';
 import {CustomerStateModel} from '../state/customer.state.';
@@ -20,7 +20,8 @@ export class CustomerViewComponent implements OnInit {
     this.store.dispatch(new RemoveCustomer(name));
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.store.dispatch(new GetCustomer());
   }
 
 }

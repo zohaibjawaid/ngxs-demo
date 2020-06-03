@@ -6,6 +6,10 @@ export class AddCustomer {
   constructor(public payload: Customer) {}
 }
 
+export class GetCustomer {
+  static readonly type = '[CUSTOMER] Get';
+}
+
 export class RemoveCustomer {
   static readonly type = '[CUSTOMER] Remove';
 
